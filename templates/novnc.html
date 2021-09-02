@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}"/>
+<div id="app" style="position: absolute; top:-75%; left:0px">
+	<div id="wrapper">
+		<h1 class="glitch" data-text="eternal">‎</h1>
+		<h1 class="glitch" data-text="bypass">bypass</h1>
+		<span class="sub">TUTORIALS - NOVNC</span>
+	</div>
+</div>
+
+<IMG STYLE="position:absolute; TOP:0px; LEFT:0px; WIDTH:100%; HEIGHT:120%" SRC='/static/images/grey.png'>
+<IMG STYLE="position:absolute; TOP:230px; LEFT:0px; WIDTH:100%; HEIGHT:.9%" SRC='/static/images/dark_blue.png'>
+<IMG STYLE="position:absolute; TOP:290px; LEFT:0px; WIDTH:100%; HEIGHT:.25%" SRC='/static/images/dark_blue.png'>
+
+<DIV style="font-size:18px; font-family:'Montserrat'; position: absolute; top:250px; left:10%; width:100px; height:500px; z-index: 9; color:#8be9fd">
+T O O L S
+</DIV>
+<DIV style="font-size:18px; font-family:'Montserrat'; position: absolute; top:250px; left:33%; width:100px; height:500px; z-index: 9; color:#8be9fd">
+A B O U T
+</DIV>
+<DIV style="font-size:18px; font-family:'Montserrat'; position: absolute; top:250px; left:57%; width:150px; height:500px; z-index: 9; color:#8be9fd">
+T U T O R I A L S
+</DIV>
+<DIV style="font-size:18px; font-family:'Montserrat'; position: absolute; top:228px; left:78%; width:350px; height:450px; z-index: 9; color:#8be9fd; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">
+A D D    U T I L I T Y    U T I L I T Y
+</DIV>
+<IMG STYLE="position:absolute; TOP:0%; LEFT:0%; z-index:888" SRC='https://www.gnu.org/graphics/gplv3-with-text-136x68.png'>
+<IMG STYLE="position:absolute; TOP:250px; LEFT:24%; WIDTH:.135%; HEIGHT:3%" SRC='/static/images/dark_blue.png'>
+<IMG STYLE="position:absolute; TOP:250px; LEFT:48.5%; WIDTH:.12%; HEIGHT:3%" SRC='/static/images/dark_blue.png'>
+<IMG STYLE="position:absolute; TOP:250px; LEFT:71.8%; WIDTH:.12%; HEIGHT:3%" SRC='/static/images/dark_blue.png'>
+
+<form action="/tools">
+    <input type="submit" style="color: transparent; background-color: transparent; border-color: transparent; z-index:200; position: absolute; TOP:250px; LEFT:10%; WIDTH:95px; HEIGHT:30px">
+</form>
+<form action="/about">
+    <input type="submit" style="color: transparent; background-color: transparent; border-color: transparent; z-index:200; position: absolute; TOP:250px; LEFT:33%; WIDTH:95px; HEIGHT:30px">
+</form>
+<form action="/tutorials">
+    <input type="submit" style="color: transparent; background-color: transparent; border-color: transparent; z-index:200; position: absolute; TOP:250px; LEFT:57%; WIDTH:140px; HEIGHT:30px">
+</form>
+<form action="/auu">
+    <input type="submit" style="color: transparent; background-color: transparent; border-color: transparent; z-index:200; position: absolute; TOP:249px; LEFT:78%; WIDTH:280px; HEIGHT:30px">
+</form>
+<form action="/">
+    <input type="submit" style="color: transparent; background-color: transparent; border-color: transparent; z-index:200; position: absolute; TOP:0px; LEFT:0%; WIDTH:100%; HEIGHT:240px">
+</form>
+<div STYLE="position: absolute; top:300px; left:1%;">
+<pre><code>This guide is part of EternalBypass.
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see &lt;https://www.gnu.org/licenses/&gt;.</code></pre>
+<h1 STYLE="color:#6272a4">How to use NoVNC</h1>
+<h2 STYLE="color:#6272a4">A guide for Linux</h2>
+<h3 STYLE="color:#6272a4">Requirements:</h3>
+<p STYLE="color:#6272a4; font-weight: bold">NoVNC installed \
+Certbot Installed \
+Any VNC server</p>
+<h2 STYLE="color:#6272a4">Table of contents:</h2>
+<ul>
+<li STYLE="color:#6272a4; font-weight: bold">Installing and testing the tools</li>
+<li STYLE="color:#6272a4; font-weight: bold">Getting an domain</li>
+<li STYLE="color:#6272a4; font-weight: bold">Getting a valid certificate</li>
+<li STYLE="color:#6272a4; font-weight: bold">Using that certificate</li>
+<li STYLE="color:#6272a4; font-weight: bold">Finished!</li>
+</ul>
+<p STYLE="color:#6272a4; font-weight: bold">First, you will need to install <a href="https://novnc.com/info.html" STYLE="color: #bd93f9">NoVNC</a>. You will also need to install LetsEncrypts <a href="https://certbot.eff.org/" STYLE="color: #bd93f9">Certbot</a>, to create an certificate so that NoVNC will be encrypted.
+And last, but not least you will need a VNC server. I used x11vnc, just because it was easy to set up. First, you need to make
+sure that NoVNC will work in the first place. To test this, run <code>x11vnc --forever --usepw</code>. This will ask for a password to set. After that,
+you will have an VNC server running on your machine on port 5900, if no other server is running, and nothing went wrong. After that, start
+NoVNC by running <code>novnc</code>. It will give you an link to go to. Once there, just make sure it all works.</p>
+<p STYLE="color:#6272a4; font-weight: bold">After all of this, you will need to get an domain. I would recomend noip.com because it is free, and any domain under .hopto.org is unblocked,
+at least at my school. With NoVNC, it will set up your current public IP to be the server for the domain. So now, you need to get an certificate.
+To do that, you need to run <code>sudo certbot certonly</code> and enter the requested details. After that, take not of where the certificate
+is located. Now, you need to forward some ports. Forward your external port 443 to internal port 6080 to your computer. After this,
+run NoVNC like so: <code>novnc --cert path/to/cert --key path/to/key</code>. And if all is done right, you can access your computer
+from the domain from anywhere!</p>
+</div>

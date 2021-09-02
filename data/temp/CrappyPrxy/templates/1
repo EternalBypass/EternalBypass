@@ -1,0 +1,24 @@
+<form method="POST">
+    <input name="text">
+    <input type="submit">
+</form>
+<pre>
+!WARNING!
+An bug is causing some previously functioning sites to break.
+It is being worked on.
+
+Version: 1.3 BETA
+
+Changelog:
+[Most recent]
+Feb 27 2021: If script is in 500 state then try to fix url if applicable.
+Feb 19 2021: Google is functional.
+Feb 19 2021: Google is mostly functional, will often return the homepage. fixes are being worked on.
+Feb 17 2021: Adding an /devolopment
+
+Being worked on:
+Manually downloading all assets from server side, so server blocking
+is bypassed. Then displaying webpage with all assets.
+</pre>
+
+

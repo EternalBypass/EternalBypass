@@ -1,0 +1,1494 @@
+/* Credit to https://codepen.io/edalgrin for the free and amazing css! */
+@import url("https://fonts.googleapis.com/css2?family=Oxanium&family=Amatic+SC:wght@700&family=Hachi+Maru+Pop&family=Stalemate&family=Yesteryear&display=swap");
+@keyframes loki {
+  1.6% {
+    --t1: translate(
+      -4px,
+      -4px
+    );
+    --ff1: Yesteryear;
+    --tt1: uppercase;
+    --t2: translate(
+      4px,
+      -4px
+    );
+    --ff2: Stalemate;
+    --tt2: uppercase;
+    --t3: translate(
+      4px,
+      -4px
+    );
+    --ff3: Stalemate;
+    --tt3: lowercase;
+    --t4: translate(
+      -4px,
+      4px
+    );
+    --ff4: Stalemate;
+    --tt4: lowercase;
+    --t5: translate(
+      4px,
+      4px
+    );
+    --ff5: Stalemate;
+    --tt5: uppercase;
+    --t6: translate(
+      4px,
+      -4px
+    );
+    --ff6: Amatic SC;
+    --tt6: uppercase;
+    --t7: translate(
+      -4px,
+      -4px
+    );
+    --ff7: Yesteryear;
+    --tt7: lowercase;
+    --t8: translate(
+      4px,
+      -4px
+    );
+    --ff8: Hachi Maru Pop;
+    --tt8: uppercase;
+    --t9: translate(
+      4px,
+      -4px
+    );
+    --ff9: Stalemate;
+    --tt9: lowercase;
+    --t10: translate(
+      -4px,
+      -4px
+    );
+    --ff10: Hachi Maru Pop;
+    --tt10: uppercase;
+    --t11: translate(
+      4px,
+      4px
+    );
+    --ff11: Yesteryear;
+    --tt11: lowercase;
+  }
+  3.4% {
+    --t1: translate(
+      -4px,
+      -4px
+    );
+    --ff1: Hachi Maru Pop;
+    --tt1: lowercase;
+    --t2: translate(
+      -4px,
+      -4px
+    );
+    --ff2: Stalemate;
+    --tt2: lowercase;
+    --t3: translate(
+      -4px,
+      -4px
+    );
+    --ff3: Yesteryear;
+    --tt3: uppercase;
+    --t4: translate(
+      -4px,
+      -4px
+    );
+    --ff4: Stalemate;
+    --tt4: uppercase;
+    --t5: translate(
+      4px,
+      -4px
+    );
+    --ff5: Amatic SC;
+    --tt5: uppercase;
+    --t6: translate(
+      4px,
+      4px
+    );
+    --ff6: Hachi Maru Pop;
+    --tt6: uppercase;
+    --t7: translate(
+      -4px,
+      -4px
+    );
+    --ff7: Hachi Maru Pop;
+    --tt7: lowercase;
+    --t8: translate(
+      -4px,
+      -4px
+    );
+    --ff8: Yesteryear;
+    --tt8: uppercase;
+    --t9: translate(
+      4px,
+      4px
+    );
+    --ff9: Yesteryear;
+    --tt9: lowercase;
+    --t10: translate(
+      4px,
+      4px
+    );
+    --ff10: Hachi Maru Pop;
+    --tt10: uppercase;
+    --t11: translate(
+      4px,
+      -4px
+    );
+    --ff11: Hachi Maru Pop;
+    --tt11: lowercase;
+  }
+  5.4% {
+    --t1: translate(
+      -4px,
+      4px
+    );
+    --t2: translate(
+      4px,
+      -4px
+    );
+    --ff2: Stalemate;
+    --tt2: lowercase;
+    --t3: translate(
+      4px,
+      -4px
+    );
+    --ff3: Stalemate;
+    --tt3: lowercase;
+    --t4: translate(
+      -4px,
+      -4px
+    );
+    --ff4: Hachi Maru Pop;
+    --tt4: lowercase;
+    --t5: translate(
+      -4px,
+      -4px
+    );
+    --ff5: Yesteryear;
+    --tt5: uppercase;
+    --t6: translate(
+      4px,
+      -4px
+    );
+    --ff6: Stalemate;
+    --tt6: uppercase;
+    --t7: translate(
+      4px,
+      4px
+    );
+    --ff7: Amatic SC;
+    --tt7: uppercase;
+    --t8: translate(
+      -4px,
+      4px
+    );
+    --ff8: Hachi Maru Pop;
+    --tt8: uppercase;
+    --t9: translate(
+      4px,
+      4px
+    );
+    --ff9: Stalemate;
+    --tt9: lowercase;
+    --t10: translate(
+      4px,
+      4px
+    );
+    --ff10: Amatic SC;
+    --tt10: uppercase;
+    --t11: translate(
+      -4px,
+      4px
+    );
+    --ff11: Hachi Maru Pop;
+    --tt11: lowercase;
+  }
+  7.6% {
+    --t1: translate(
+      4px,
+      -4px
+    );
+    --t2: translate(
+      4px,
+      -4px
+    );
+    --ff2: Amatic SC;
+    --tt2: uppercase;
+    --t3: translate(
+      4px,
+      4px
+    );
+    --ff3: Yesteryear;
+    --tt3: uppercase;
+    --t4: translate(
+      -4px,
+      -4px
+    );
+    --ff4: Yesteryear;
+    --tt4: uppercase;
+    --t5: translate(
+      4px,
+      -4px
+    );
+    --ff5: Stalemate;
+    --tt5: uppercase;
+    --t6: translate(
+      -4px,
+      -4px
+    );
+    --ff6: Hachi Maru Pop;
+    --tt6: lowercase;
+    --t7: translate(
+      -4px,
+      -4px
+    );
+    --ff7: Amatic SC;
+    --tt7: lowercase;
+    --t8: translate(
+      4px,
+      4px
+    );
+    --ff8: Amatic SC;
+    --tt8: uppercase;
+    --t9: translate(
+      -4px,
+      -4px
+    );
+    --ff9: Yesteryear;
+    --tt9: lowercase;
+    --t10: translate(
+      -4px,
+      4px
+    );
+    --ff10: Stalemate;
+    --tt10: uppercase;
+    --t11: translate(
+      4px,
+      -4px
+    );
+    --ff11: Hachi Maru Pop;
+    --tt11: uppercase;
+  }
+  10% {
+    --t1: translate(
+      -4px,
+      4px
+    );
+    --t2: translate(
+      -4px,
+      4px
+    );
+    --t3: translate(
+      4px,
+      -4px
+    );
+    --ff3: Yesteryear;
+    --tt3: uppercase;
+    --t4: translate(
+      -4px,
+      -4px
+    );
+    --ff4: Yesteryear;
+    --tt4: lowercase;
+    --t5: translate(
+      -4px,
+      4px
+    );
+    --ff5: Amatic SC;
+    --tt5: lowercase;
+    --t6: translate(
+      4px,
+      -4px
+    );
+    --ff6: Yesteryear;
+    --tt6: uppercase;
+    --t7: translate(
+      -4px,
+      -4px
+    );
+    --ff7: Hachi Maru Pop;
+    --tt7: lowercase;
+    --t8: translate(
+      4px,
+      4px
+    );
+    --ff8: Hachi Maru Pop;
+    --tt8: lowercase;
+    --t9: translate(
+      -4px,
+      4px
+    );
+    --ff9: Hachi Maru Pop;
+    --tt9: lowercase;
+    --t10: translate(
+      4px,
+      -4px
+    );
+    --ff10: Stalemate;
+    --tt10: lowercase;
+    --t11: translate(
+      4px,
+      -4px
+    );
+    --ff11: Hachi Maru Pop;
+    --tt11: uppercase;
+  }
+  12.6% {
+    --t1: translate(
+      -4px,
+      4px
+    );
+    --t2: translate(
+      -4px,
+      4px
+    );
+    --t3: translate(
+      4px,
+      4px
+    );
+    --ff3: Hachi Maru Pop;
+    --tt3: lowercase;
+    --t4: translate(
+      4px,
+      -4px
+    );
+    --ff4: Yesteryear;
+    --tt4: uppercase;
+    --t5: translate(
+      4px,
+      -4px
+    );
+    --ff5: Stalemate;
+    --tt5: uppercase;
+    --t6: translate(
+      -4px,
+      -4px
+    );
+    --ff6: Stalemate;
+    --tt6: lowercase;
+    --t7: translate(
+      -4px,
+      4px
+    );
+    --ff7: Stalemate;
+    --tt7: lowercase;
+    --t8: translate(
+      -4px,
+      -4px
+    );
+    --ff8: Hachi Maru Pop;
+    --tt8: uppercase;
+    --t9: translate(
+      4px,
+      4px
+    );
+    --ff9: Hachi Maru Pop;
+    --tt9: lowercase;
+    --t10: translate(
+      -4px,
+      4px
+    );
+    --ff10: Stalemate;
+    --tt10: uppercase;
+    --t11: translate(
+      4px,
+      4px
+    );
+    --ff11: Amatic SC;
+    --tt11: uppercase;
+  }
+  15.4% {
+    --t1: translate(
+      -4px,
+      4px
+    );
+    --t2: translate(
+      4px,
+      4px
+    );
+    --t3: translate(
+      -4px,
+      -4px
+    );
+    --t4: translate(
+      4px,
+      4px
+    );
+    --ff4: Yesteryear;
+    --tt4: uppercase;
+    --t5: translate(
+      4px,
+      4px
+    );
+    --ff5: Stalemate;
+    --tt5: uppercase;
+    --t6: translate(
+      -4px,
+      4px
+    );
+    --ff6: Yesteryear;
+    --tt6: uppercase;
+    --t7: translate(
+      4px,
+      -4px
+    );
+    --ff7: Yesteryear;
+    --tt7: lowercase;
+    --t8: translate(
+      4px,
+      4px
+    );
+    --ff8: Amatic SC;
+    --tt8: lowercase;
+    --t9: translate(
+      4px,
+      4px
+    );
+    --ff9: Amatic SC;
+    --tt9: lowercase;
+    --t10: translate(
+      -4px,
+      -4px
+    );
+    --ff10: Amatic SC;
+    --tt10: uppercase;
+    --t11: translate(
+      -4px,
+      4px
+    );
+    --ff11: Amatic SC;
+    --tt11: uppercase;
+  }
+  18.4% {
+    --t1: translate(
+      -4px,
+      4px
+    );
+    --t2: translate(
+      4px,
+      4px
+    );
+    --t3: translate(
+      -4px,
+      -4px
+    );
+    --t4: translate(
+      -4px,
+      -4px
+    );
+    --ff4: Stalemate;
+    --tt4: lowercase;
+    --t5: translate(
+      4px,
+      -4px
+    );
+    --ff5: Stalemate;
+    --tt5: uppercase;
+    --t6: translate(
+      -4px,
+      4px
+    );
+    --ff6: Amatic SC;
+    --tt6: uppercase;
+    --t7: translate(
+      4px,
+      4px
+    );
+    --ff7: Yesteryear;
+    --tt7: uppercase;
+    --t8: translate(
+      4px,
+      -4px
+    );
+    --ff8: Yesteryear;
+    --tt8: uppercase;
+    --t9: translate(
+      -4px,
+      -4px
+    );
+    --ff9: Amatic SC;
+    --tt9: uppercase;
+    --t10: translate(
+      -4px,
+      4px
+    );
+    --ff10: Amatic SC;
+    --tt10: lowercase;
+    --t11: translate(
+      -4px,
+      -4px
+    );
+    --ff11: Yesteryear;
+    --tt11: lowercase;
+  }
+  21.6% {
+    --t1: translate(
+      -4px,
+      4px
+    );
+    --t2: translate(
+      -4px,
+      4px
+    );
+    --t3: translate(
+      -4px,
+      4px
+    );
+    --t4: translate(
+      -4px,
+      -4px
+    );
+    --t5: translate(
+      -4px,
+      4px
+    );
+    --ff5: Amatic SC;
+    --tt5: lowercase;
+    --t6: translate(
+      -4px,
+      4px
+    );
+    --ff6: Hachi Maru Pop;
+    --tt6: lowercase;
+    --t7: translate(
+      4px,
+      -4px
+    );
+    --ff7: Yesteryear;
+    --tt7: lowercase;
+    --t8: translate(
+      4px,
+      -4px
+    );
+    --ff8: Amatic SC;
+    --tt8: lowercase;
+    --t9: translate(
+      -4px,
+      4px
+    );
+    --ff9: Yesteryear;
+    --tt9: uppercase;
+    --t10: translate(
+      -4px,
+      -4px
+    );
+    --ff10: Amatic SC;
+    --tt10: lowercase;
+    --t11: translate(
+      -4px,
+      -4px
+    );
+    --ff11: Stalemate;
+    --tt11: lowercase;
+  }
+  25% {
+    --t1: translate(
+      -4px,
+      4px
+    );
+    --t2: translate(
+      4px,
+      -4px
+    );
+    --t3: translate(
+      -4px,
+      -4px
+    );
+    --t4: translate(
+      -4px,
+      -4px
+    );
+    --t5: translate(
+      4px,
+      4px
+    );
+    --ff5: Stalemate;
+    --tt5: uppercase;
+    --t6: translate(
+      4px,
+      4px
+    );
+    --ff6: Amatic SC;
+    --tt6: uppercase;
+    --t7: translate(
+      4px,
+      4px
+    );
+    --ff7: Hachi Maru Pop;
+    --tt7: lowercase;
+    --t8: translate(
+      4px,
+      4px
+    );
+    --ff8: Stalemate;
+    --tt8: lowercase;
+    --t9: translate(
+      4px,
+      -4px
+    );
+    --ff9: Yesteryear;
+    --tt9: lowercase;
+    --t10: translate(
+      -4px,
+      -4px
+    );
+    --ff10: Yesteryear;
+    --tt10: uppercase;
+    --t11: translate(
+      -4px,
+      4px
+    );
+    --ff11: Amatic SC;
+    --tt11: lowercase;
+  }
+  28.6% {
+    --t1: translate(
+      -4px,
+      4px
+    );
+    --t2: translate(
+      -4px,
+      -4px
+    );
+    --t3: translate(
+      -4px,
+      -4px
+    );
+    --t4: translate(
+      4px,
+      4px
+    );
+    --t5: translate(
+      4px,
+      -4px
+    );
+    --t6: translate(
+      4px,
+      4px
+    );
+    --ff6: Yesteryear;
+    --tt6: lowercase;
+    --t7: translate(
+      4px,
+      -4px
+    );
+    --ff7: Amatic SC;
+    --tt7: uppercase;
+    --t8: translate(
+      4px,
+      -4px
+    );
+    --ff8: Amatic SC;
+    --tt8: lowercase;
+    --t9: translate(
+      -4px,
+      -4px
+    );
+    --ff9: Yesteryear;
+    --tt9: lowercase;
+    --t10: translate(
+      -4px,
+      -4px
+    );
+    --ff10: Amatic SC;
+    --tt10: uppercase;
+    --t11: translate(
+      4px,
+      4px
+    );
+    --ff11: Stalemate;
+    --tt11: uppercase;
+  }
+  32.4% {
+    --t1: translate(
+      -4px,
+      4px
+    );
+    --t2: translate(
+      -4px,
+      4px
+    );
+    --t3: translate(
+      -4px,
+      -4px
+    );
+    --t4: translate(
+      4px,
+      -4px
+    );
+    --t5: translate(
+      4px,
+      -4px
+    );
+    --t6: translate(
+      4px,
+      -4px
+    );
+    --ff6: Stalemate;
+    --tt6: lowercase;
+    --t7: translate(
+      -4px,
+      -4px
+    );
+    --ff7: Stalemate;
+    --tt7: uppercase;
+    --t8: translate(
+      -4px,
+      4px
+    );
+    --ff8: Stalemate;
+    --tt8: lowercase;
+    --t9: translate(
+      -4px,
+      4px
+    );
+    --ff9: Hachi Maru Pop;
+    --tt9: lowercase;
+    --t10: translate(
+      -4px,
+      -4px
+    );
+    --ff10: Hachi Maru Pop;
+    --tt10: lowercase;
+    --t11: translate(
+      4px,
+      4px
+    );
+    --ff11: Amatic SC;
+    --tt11: lowercase;
+  }
+  36.4% {
+    --t1: translate(
+      4px,
+      -4px
+    );
+    --t2: translate(
+      -4px,
+      -4px
+    );
+    --t3: translate(
+      4px,
+      4px
+    );
+    --t4: translate(
+      4px,
+      4px
+    );
+    --t5: translate(
+      -4px,
+      -4px
+    );
+    --t6: translate(
+      -4px,
+      4px
+    );
+    --t7: translate(
+      -4px,
+      -4px
+    );
+    --ff7: Stalemate;
+    --tt7: uppercase;
+    --t8: translate(
+      4px,
+      4px
+    );
+    --ff8: Amatic SC;
+    --tt8: uppercase;
+    --t9: translate(
+      4px,
+      4px
+    );
+    --ff9: Stalemate;
+    --tt9: uppercase;
+    --t10: translate(
+      4px,
+      4px
+    );
+    --ff10: Stalemate;
+    --tt10: lowercase;
+    --t11: translate(
+      -4px,
+      -4px
+    );
+    --ff11: Hachi Maru Pop;
+    --tt11: uppercase;
+  }
+  40.6% {
+    --t1: translate(
+      -4px,
+      -4px
+    );
+    --t2: translate(
+      -4px,
+      4px
+    );
+    --t3: translate(
+      4px,
+      -4px
+    );
+    --t4: translate(
+      -4px,
+      -4px
+    );
+    --t5: translate(
+      -4px,
+      4px
+    );
+    --t6: translate(
+      4px,
+      -4px
+    );
+    --t7: translate(
+      -4px,
+      -4px
+    );
+    --ff7: Amatic SC;
+    --tt7: uppercase;
+    --t8: translate(
+      4px,
+      4px
+    );
+    --ff8: Stalemate;
+    --tt8: uppercase;
+    --t9: translate(
+      4px,
+      4px
+    );
+    --ff9: Stalemate;
+    --tt9: uppercase;
+    --t10: translate(
+      4px,
+      -4px
+    );
+    --ff10: Yesteryear;
+    --tt10: uppercase;
+    --t11: translate(
+      -4px,
+      -4px
+    );
+    --ff11: Hachi Maru Pop;
+    --tt11: uppercase;
+  }
+  45% {
+    --t1: translate(
+      -4px,
+      4px
+    );
+    --t2: translate(
+      4px,
+      -4px
+    );
+    --t3: translate(
+      4px,
+      -4px
+    );
+    --t4: translate(
+      -4px,
+      -4px
+    );
+    --t5: translate(
+      4px,
+      -4px
+    );
+    --t6: translate(
+      -4px,
+      -4px
+    );
+    --t7: translate(
+      -4px,
+      4px
+    );
+    --t8: translate(
+      4px,
+      -4px
+    );
+    --ff8: Yesteryear;
+    --tt8: uppercase;
+    --t9: translate(
+      4px,
+      4px
+    );
+    --ff9: Stalemate;
+    --tt9: lowercase;
+    --t10: translate(
+      4px,
+      4px
+    );
+    --ff10: Hachi Maru Pop;
+    --tt10: uppercase;
+    --t11: translate(
+      4px,
+      4px
+    );
+    --ff11: Yesteryear;
+    --tt11: lowercase;
+  }
+  49.6% {
+    --t1: translate(
+      4px,
+      4px
+    );
+    --t2: translate(
+      -4px,
+      4px
+    );
+    --t3: translate(
+      -4px,
+      4px
+    );
+    --t4: translate(
+      -4px,
+      4px
+    );
+    --t5: translate(
+      -4px,
+      -4px
+    );
+    --t6: translate(
+      -4px,
+      -4px
+    );
+    --t7: translate(
+      4px,
+      -4px
+    );
+    --t8: translate(
+      4px,
+      4px
+    );
+    --ff8: Hachi Maru Pop;
+    --tt8: lowercase;
+    --t9: translate(
+      4px,
+      -4px
+    );
+    --ff9: Stalemate;
+    --tt9: lowercase;
+    --t10: translate(
+      -4px,
+      4px
+    );
+    --ff10: Stalemate;
+    --tt10: uppercase;
+    --t11: translate(
+      4px,
+      -4px
+    );
+    --ff11: Amatic SC;
+    --tt11: uppercase;
+  }
+  54.4% {
+    --t1: translate(
+      4px,
+      -4px
+    );
+    --t2: translate(
+      4px,
+      -4px
+    );
+    --t3: translate(
+      -4px,
+      4px
+    );
+    --t4: translate(
+      4px,
+      -4px
+    );
+    --t5: translate(
+      4px,
+      4px
+    );
+    --t6: translate(
+      -4px,
+      -4px
+    );
+    --t7: translate(
+      -4px,
+      -4px
+    );
+    --t8: translate(
+      4px,
+      -4px
+    );
+    --t9: translate(
+      4px,
+      4px
+    );
+    --ff9: Amatic SC;
+    --tt9: lowercase;
+    --t10: translate(
+      4px,
+      4px
+    );
+    --ff10: Hachi Maru Pop;
+    --tt10: uppercase;
+    --t11: translate(
+      -4px,
+      4px
+    );
+    --ff11: Yesteryear;
+    --tt11: lowercase;
+  }
+  59.4% {
+    --t1: translate(
+      -4px,
+      4px
+    );
+    --t2: translate(
+      -4px,
+      -4px
+    );
+    --t3: translate(
+      -4px,
+      4px
+    );
+    --t4: translate(
+      4px,
+      4px
+    );
+    --t5: translate(
+      4px,
+      4px
+    );
+    --t6: translate(
+      -4px,
+      -4px
+    );
+    --t7: translate(
+      -4px,
+      -4px
+    );
+    --t8: translate(
+      -4px,
+      4px
+    );
+    --t9: translate(
+      -4px,
+      4px
+    );
+    --ff9: Stalemate;
+    --tt9: lowercase;
+    --t10: translate(
+      -4px,
+      4px
+    );
+    --ff10: Stalemate;
+    --tt10: lowercase;
+    --t11: translate(
+      -4px,
+      -4px
+    );
+    --ff11: Yesteryear;
+    --tt11: lowercase;
+  }
+  64.6% {
+    --t1: translate(
+      -4px,
+      -4px
+    );
+    --t2: translate(
+      4px,
+      4px
+    );
+    --t3: translate(
+      4px,
+      4px
+    );
+    --t4: translate(
+      -4px,
+      -4px
+    );
+    --t5: translate(
+      4px,
+      -4px
+    );
+    --t6: translate(
+      -4px,
+      4px
+    );
+    --t7: translate(
+      -4px,
+      -4px
+    );
+    --t8: translate(
+      4px,
+      -4px
+    );
+    --t9: translate(
+      -4px,
+      4px
+    );
+    --t10: translate(
+      4px,
+      4px
+    );
+    --ff10: Amatic SC;
+    --tt10: uppercase;
+    --t11: translate(
+      4px,
+      -4px
+    );
+    --ff11: Amatic SC;
+    --tt11: lowercase;
+  }
+  70% {
+    --t1: translate(
+      4px,
+      4px
+    );
+    --t2: translate(
+      4px,
+      4px
+    );
+    --t3: translate(
+      4px,
+      4px
+    );
+    --t4: translate(
+      -4px,
+      -4px
+    );
+    --t5: translate(
+      -4px,
+      4px
+    );
+    --t6: translate(
+      -4px,
+      4px
+    );
+    --t7: translate(
+      4px,
+      4px
+    );
+    --t8: translate(
+      -4px,
+      -4px
+    );
+    --t9: translate(
+      4px,
+      4px
+    );
+    --t10: translate(
+      4px,
+      -4px
+    );
+    --ff10: Hachi Maru Pop;
+    --tt10: uppercase;
+    --t11: translate(
+      4px,
+      -4px
+    );
+    --ff11: Hachi Maru Pop;
+    --tt11: uppercase;
+  }
+  75.6% {
+    --t1: translate(
+      -4px,
+      -4px
+    );
+    --t2: translate(
+      4px,
+      4px
+    );
+    --t3: translate(
+      4px,
+      -4px
+    );
+    --t4: translate(
+      -4px,
+      -4px
+    );
+    --t5: translate(
+      -4px,
+      -4px
+    );
+    --t6: translate(
+      4px,
+      4px
+    );
+    --t7: translate(
+      -4px,
+      4px
+    );
+    --t8: translate(
+      4px,
+      -4px
+    );
+    --t9: translate(
+      4px,
+      -4px
+    );
+    --t10: translate(
+      -4px,
+      -4px
+    );
+    --t11: translate(
+      -4px,
+      4px
+    );
+    --ff11: Amatic SC;
+    --tt11: uppercase;
+  }
+  81.4% {
+    --t1: translate(
+      4px,
+      -4px
+    );
+    --t2: translate(
+      -4px,
+      4px
+    );
+    --t3: translate(
+      -4px,
+      -4px
+    );
+    --t4: translate(
+      4px,
+      -4px
+    );
+    --t5: translate(
+      -4px,
+      -4px
+    );
+    --t6: translate(
+      -4px,
+      4px
+    );
+    --t7: translate(
+      4px,
+      -4px
+    );
+    --t8: translate(
+      4px,
+      -4px
+    );
+    --t9: translate(
+      4px,
+      -4px
+    );
+    --t10: translate(
+      4px,
+      -4px
+    );
+    --t11: translate(
+      4px,
+      4px
+    );
+    --ff11: Stalemate;
+    --tt11: lowercase;
+  }
+  87.4% {
+    --t1: translate(
+      -4px,
+      -4px
+    );
+    --t2: translate(
+      -4px,
+      4px
+    );
+    --t3: translate(
+      4px,
+      -4px
+    );
+    --t4: translate(
+      4px,
+      -4px
+    );
+    --t5: translate(
+      -4px,
+      -4px
+    );
+    --t6: translate(
+      4px,
+      -4px
+    );
+    --t7: translate(
+      -4px,
+      4px
+    );
+    --t8: translate(
+      4px,
+      4px
+    );
+    --t9: translate(
+      4px,
+      4px
+    );
+    --t10: translate(
+      4px,
+      4px
+    );
+    --t11: translate(
+      4px,
+      -4px
+    );
+  }
+  93.6% {
+    --t1: translate(
+      -4px,
+      -4px
+    );
+    --t2: translate(
+      -4px,
+      4px
+    );
+    --t3: translate(
+      -4px,
+      4px
+    );
+    --t4: translate(
+      -4px,
+      4px
+    );
+    --t5: translate(
+      -4px,
+      -4px
+    );
+    --t6: translate(
+      -4px,
+      -4px
+    );
+    --t7: translate(
+      -4px,
+      4px
+    );
+    --t8: translate(
+      -4px,
+      4px
+    );
+    --t9: translate(
+      -4px,
+      4px
+    );
+    --t10: translate(
+      -4px,
+      4px
+    );
+    --t11: translate(
+      -4px,
+      -4px
+    );
+  }
+  100% {
+    --t1: translate(
+      -4px,
+      -4px
+    );
+    --t2: translate(
+      -4px,
+      -4px
+    );
+    --t3: translate(
+      4px,
+      4px
+    );
+    --t4: translate(
+      4px,
+      -4px
+    );
+    --t5: translate(
+      -4px,
+      4px
+    );
+    --t6: translate(
+      4px,
+      -4px
+    );
+    --t7: translate(
+      -4px,
+      4px
+    );
+    --t8: translate(
+      -4px,
+      -4px
+    );
+    --t9: translate(
+      -4px,
+      -4px
+    );
+    --t10: translate(
+      4px,
+      4px
+    );
+    --t11: translate(
+      4px,
+      -4px
+    );
+  }
+  to {
+    transform: scale(1.3);
+  }
+}
+body {
+  color: white;
+  background-color: black;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  font-size: 8vmax;
+  font-family: "Oxanium";
+  text-shadow: 0 0 10px #fff700;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+body div {
+  display: flex;
+  gap: 1vw;
+  animation: loki 10s forwards;
+}
+body div span:nth-child(1n) {
+  font-family: var(--ff1);
+  text-transform: var(--tt1);
+  transform: var(--t1);
+}
+body div span:nth-child(2n) {
+  font-family: var(--ff2);
+  text-transform: var(--tt2);
+  transform: var(--t2);
+}
+body div span:nth-child(3n) {
+  font-family: var(--ff3);
+  text-transform: var(--tt3);
+  transform: var(--t3);
+}
+body div span:nth-child(4n) {
+  font-family: var(--ff4);
+  text-transform: var(--tt4);
+  transform: var(--t4);
+}
+body div span:nth-child(5n) {
+  font-family: var(--ff5);
+  text-transform: var(--tt5);
+  transform: var(--t5);
+}
+body div span:nth-child(6n) {
+  font-family: var(--ff6);
+  text-transform: var(--tt6);
+  transform: var(--t6);
+}
+body div span:nth-child(7n) {
+  font-family: var(--ff7);
+  text-transform: var(--tt7);
+  transform: var(--t7);
+}
+body div span:nth-child(8n) {
+  font-family: var(--ff8);
+  text-transform: var(--tt8);
+  transform: var(--t8);
+}
+body div span:nth-child(9n) {
+  font-family: var(--ff9);
+  text-transform: var(--tt9);
+  transform: var(--t9);
+}
+body div span:nth-child(10n) {
+  font-family: var(--ff10);
+  text-transform: var(--tt10);
+  transform: var(--t10);
+}
+body div span:nth-child(11n) {
+  font-family: var(--ff11);
+  text-transform: var(--tt11);
+  transform: var(--t11);
+}

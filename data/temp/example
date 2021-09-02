@@ -1,0 +1,22 @@
+#You will be in an Debian virtual machine, with web services automaticly set up.
+#Your setup and start commands will be run inside your root directory of your repo.
+#Dns records formatted like Type|Name|Target and name may be another project ID like this: ID(23232)
+#Supported DNS records are 
+#A
+#CNAME
+#Round Robin
+#TXT
+#SPF
+#DKIM
+#SRV
+#CAA
+#For secrets, DM timothyhay on discord. I will set them up for you.
+Name:CrappyPrxy
+Source:https://github.com/timothyhay256/crappyprxy
+Requires:python3 
+Root:True
+Setup:pip install -r requirements.txt
+Start:python3 main.py
+DNSRecords:CNAME|a|ID(38921) CNAME|b|ID(54532)
+GlobalVars:IMPORTANT="fdsa"
+Secrets:True

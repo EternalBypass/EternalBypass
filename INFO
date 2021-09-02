@@ -1,0 +1,17 @@
+Hello, this is just some info about how this program does and I want to work.
+Its all in the main. Different parts must run in different threads, the actual
+execution must end in flasks infinite loop. Other services must be in threads.
+Each thread must have the following:
+Use the log function to give important information. When logging, make sure
+it knows that it is your thread that is giving this info. Handle errors if
+possible. Try not to print info, the log function writes to a file. Check up
+on your thread using the watchdog to checkup on and restart
+dead threads.To do so, make sure that the necessary variables are all global, in
+not only the watchdog but the graceful death. Then you can add your thread to be monitored.
+Upon starting the thread, make sure it doesnt hang the main execution.
+When starting your thread, make sure it is running like this:
+self.functionName
+and not:
+self.functionName().
+If the thread is absolutely completely necessary to the entire system working, then
+never ever let it go fatal in a way that will kill everything else.

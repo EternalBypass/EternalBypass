@@ -1,0 +1,100 @@
+Eternal-Bypass mirror#9327: Not dead
+timothyhay#3378: I fixed it
+timothyhay#3378: $status
+Eternal-Bypass mirror#9327: Not dead
+annoying squimb#0221: test?
+annoying squimb#0221: $status
+Eternal-Bypass mirror#9327: Not dead
+MEE6#4876: GG <@867174698919133224>, you just advanced to level 3!
+annoying squimb#0221: ?
+annoying squimb#0221: SHUT UP BOT?
+annoying squimb#0221: $status
+Eternal-Bypass mirror#9327: Not dead
+annoying squimb#0221: ha
+annoying squimb#0221: i can do it too
+annoying squimb#0221: $kill
+Eternal-Bypass mirror#9327: Goodbye.
+annoying squimb#0221: BWAHAHHAHAHAHHAHH
+annoying squimb#0221: $status
+Eternal-Bypass mirror#9327: Not dead
+annoying squimb#0221: ...
+annoying squimb#0221: i didnt kill it...
+annoying squimb#0221: $kill
+Eternal-Bypass mirror#9327: Goodbye.
+annoying squimb#0221: HA
+timothyhay#3378: $status
+Eternal-Bypass mirror#9327: Not dead
+MEE6#4876: GG <@771132127605293077>, you just advanced to level 3!
+timothyhay#3378: It restarts itself every 3 seconds
+annoying squimb#0221: o
+timothyhay#3378: $status
+Eternal-Bypass mirror#9327: Alive and well.
+timothyhay#3378: $kill
+Eternal-Bypass mirror#9327: Goodbye, Ill be back soon.
+timothyhay#3378: $status
+Eternal-Bypass mirror#9327: Alive and well.
+annoying squimb#0221: $kill
+Eternal-Bypass mirror#9327: Goodbye, Ill be back soon.
+annoying squimb#0221: anyone online?
+timothyhay#3378: You can check who is online
+annoying squimb#0221: i know
+annoying squimb#0221: anyone on the server?
+snoopyhoff#3750: Maybe
+annoying squimb#0221: maybe
+annoying squimb#0221: $kill
+Eternal-Bypass mirror#9327: Goodbye, Ill be back soon.
+timothyhay#3378: $status
+Eternal-Bypass mirror#9327: Alive and well.
+timothyhay#3378: $status
+Eternal-Bypass mirror#9327: Alive and well.
+timothyhay#3378: $kill
+Eternal-Bypass mirror#9327: Goodbye, Ill be back soon.
+timothyhay#3378: $status
+Eternal-Bypass mirror#9327: Alive and well.
+timothyhay#3378: $status
+timothyhay#3378: $status
+annoying squimb#0221: $status
+timothyhay#3378: $status
+timothyhay#3378: @everyone If you would care to get a functioning proxy site before the project is finished, join https://discord.gg/unblock and ask the bot there for an link.
+MEE6#4876: GG <@771132127605293077>, you just advanced to level 4!
+timothyhay#3378: If you care to know the difference between this project and Titanium Network, on their server they will only reserve a couple domains per proxy site. And then you can only request around 3 a month. So any school administrator with a couple of discord accounts could shut down the entire network from working at their school. They do it this way because their domains cost money. But this will use free domains, and will register and use a new domain as soon as any user reports it being blocked. This is the main difference, but another thing is that people can host their own tools on this server.
+timothyhay#3378: Also if anyone wants to help develop please tell me
+timothyhay#3378: It’s all in Python using Flask, I cannot make the repo open source until I remove some sensitive information from the history, but it’s also Linux dependent.
+annoying squimb#0221: who made this server?
+timothyhay#3378: Idk
+timothyhay#3378: So turns out their stuff doesn’t work so well
+timothyhay#3378: I am going to try to find a temporary solution
+timothyhay#3378: maybe
+timothyhay#3378: sometime
+SonicJon83#3866: 
+timothyhay#3378: Something interesting I have noticed, is that .org websites are unblocked by default
+timothyhay#3378: I have a instance of an very good proxy site running, I just need to make sure it all works properly.
+timothyhay#3378: And it got blocked very quickly
+timothyhay#3378: But any domain on .hopto.org doesn’t get blocked and can be gotten for free on noip.com
+timothyhay#3378: Also something cool I found is novnc which basically lets you VNC into your computer at home with a chrome book
+timothyhay#3378: I have found and started hosting a super simple proxy. Ignore the navigation on the top, it’s not something worth my time to change, yet. Maybe later. Just waiting for the dns servers to update to reveal the address
+timothyhay#3378: And I’m making sure it all wirks
+timothyhay#3378: Works*
+timothyhay#3378: @everyone Finally a temporary solution is up. It is at https://eb-temp.hopto.org and does indeed support https, but for some reason this is not enforced even though I am telling it to be. I just found this one on GitHub (it’s called vanadium on GitHub) and it supposedly supports logging in to apps like discord, Reddit and YouTube and things like that. I would figure out the ssl stuff, but right now I am not familiar with the languages it’s written in, and I have school early tomorrow. So if you are going to log in, make sure you go to https://eb-temp.hopto.org and make sure the https is at the beginning. Also something else I just remembered, this proxy has a strange habit of not letting you click on search results in its search engine(DuckDuckGo) so you need to ctrl click it or right click and open in new tab. Idk why, but hopefully they fix it soon. Anyway, if it bothers anyone it wouldn’t take terribly long to figure out enforcing ssl but if no one needs it I’m just going to keep it this way, at least for now. I don’t want to do unecessary work no matter how little it is. But I would recommend making a bookmark with the https part so that you can just click on it.
+billypopdog#7062: 
+timothyhay#3378: So the site I set up temporarily kinda sucks
+timothyhay#3378: But unless someone suggests another open source good proxy site, it’s probably gonna have to stay
+timothyhay#3378: I’m working on making it better though
+timothyhay#3378: Another weird thing, sites will load without css unless you use http
+timothyhay#3378: I have a proxy I made that works pretty well, it just needs some more work. I might start hosting it, but if anyone wants to help fix it please let me know
+billypopdog#7062: im not too good at codeing but i have freinds that are ill se what they can do
+billypopdog#7062: <@771132127605293077> Hey the eb temp sulution is up and working but duck duck go is unfortunatly down if you could help me in any way that would be great
+timothyhay#3378: Yeah, for some reason the developers of the proxy site I am using made it so css won’t load unless it is http, so make sure the site is http
+MEE6#4876: GG <@771132127605293077>, you just advanced to level 5!
+timothyhay#3378: If I can finish my better proxy that is made to work with almost any site I’ll set it up
+timothyhay#3378: But it might take a while to finish working alone
+timothyhay#3378: Tomorrow imma disable certificates, that should help with the css failing to load
+billypopdog#7062: K
+billypopdog#7062: Wait is all your code open sorce and where do i find it
+timothyhay#3378: Yeah it’s all foss, I’m going to combine the proxy code and eternalbypass code because I need to do testing, but the GitHub repo has secrets in its history so I either have to manually remove those secrets or I have to make a new repo
+timothyhay#3378: But I’m probably just gonna make a new repo
+timothyhay#3378: I’ll try to remember to release it when at home
+billypopdog#7062: Ill try to help finding the secrets i have never tryied messing with github but i could probably get some passwords
+MEE6#4876: GG <@613224985648955402>, you just advanced to level 1!
+billypopdog#7062: 
+billypopdog#7062: Yo is the website gunna be back up anytime soon?

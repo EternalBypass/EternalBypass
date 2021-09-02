@@ -1,0 +1,6 @@
+pyautogui
+flask==2.0.0
+discord.py
+watchdog
+python-dotenv
+turbo-flask

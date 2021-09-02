@@ -1,0 +1,9 @@
+numpy
+matplotlib
+flask
+datetime
+requests
+psutil
+bs4
+pandas
+requests_random_user_agent

@@ -1,0 +1,21 @@
+timothyhay#3378: This is to act as a big list of proxies you can add. How to add:
+timothyhay#3378: 1: it must be on the AUU. When <#864263032120803348> is finished, you can add it from there right on discord.
+timothyhay#3378: 2: Here are some reminders from the AUU rules:
+It must be licensed under the GNU General Public License V3 or later.
+It must not collect remotely any information about the user at all.
+timothyhay#3378: 3: how to add it:
+Format your message like this to be allowed on this list:
+Name: MyWebProxy
+Source code: https://github.com/me/mywebproxy
+AUU id: auu-00001
+timothyhay#3378: And if it’s a valid Id, the website mirror will supply the active domain.
+timothyhay#3378: See here for COPYING information: https://raw.githubusercontent.com/timothyhay256/EternalBypass/main/COPYING?token=AOEXMP25CB7B5YLEQM2EYVTA7SGJ6
+timothyhay#3378: ```This channel is part of EternalBypass. EternalBypass is free software: 
+you can redistribute it and/or modify it under the terms of the GNU 
+General Public License as published by the Free Software Foundation, either 
+version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details. ```
