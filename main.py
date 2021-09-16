@@ -35,8 +35,6 @@ except Exception: #TODO Fix pyautogui to work with X, or preferably better solut
 	pass
 import subprocess
 try:
-	dot = open('./static/eternalBypass.env', 'r')
-	dotr = dot.read()
 	from dotenv import load_dotenv
 	load_dotenv('./static/eternalBypass.env')
 	path=str(os.getenv("FULL_PATH"))
@@ -88,7 +86,10 @@ def die():
 		os.system('rm -rf temp.py '+path+'logs/tempScript.log tempF')
 		tc.do_run = False
 	except Exception as die_err:
-		log("ERROR", ' - Failed to die gracefully. Reason: '+str(die_err))
+		try:
+			log("ERROR", ' - Failed to die gracefully. Reason: '+str(die_err))
+		except Exception:
+			print("ERROR", " - Failed to die gracefully, and could not log. Reason: "+str(die_err))
 		exit()
 	log("INFO", " - Died gracefully. For all time. Always.[all threads reset/killed] ("+str(datetime.now())+") \n")
 	exit()
