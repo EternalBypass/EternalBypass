@@ -13,7 +13,8 @@ Copyright (C) 2021 James Hoffman
 	GNU General Public License for more details.
 
 	You should have received a copy of the GNU General Public License
-	along with this program.  If not, see <https://www.gnu.org/licenses/>.
+	along with this program.  If not, please check the COPYING file
+	 or see <https://www.gnu.org/licenses/>.
 
 You can contact me at jamesgene@icloud.com.
 '''
@@ -26,6 +27,8 @@ from threading import Thread
 import shutil
 import threading
 import sys
+dotenv_loaded=False
+path=''
 try:
 	import pyautogui
 except Exception: #TODO Fix pyautogui to work with X, or preferably better solution.
@@ -37,12 +40,22 @@ try:
 	from dotenv import load_dotenv
 	load_dotenv('./static/eternalBypass.env')
 	path=str(os.getenv("FULL_PATH"))
+	print('INFO - Path is ' + path)
+	if path[-1] != '/':
+		path = str(path + '/')
+		print('INFO - Path has been corrected to ' + path)
+	dotenv_loaded = True
 except Exception as err:
 	print('ERROR - Unable to load dotenv. Err:', err)
-	path = os.environ['FULL_PATH']
-	if path == str('None'):
+	try:
+		path = os.environ.get('FULL_PATH')
+		print('INFO - Path is '+path)
+		if path[-1] != '/':
+			path = str(path + '/')
+			print('INFO - Path has been corrected to '+path)
+	except Exception:
 		print('ERROR - Unable to load dotenv, or load full path of necessary files from system vars. Defaulting to current directory.')
-	path = './'
+		path = './'
 
 #==========Editable==========
 logFileOutPlain = False #When writing to the log file, write in plaintext.
@@ -63,6 +76,11 @@ def die():
 	global td
 	global tc
 	try:
+		local_export = open(path + 'logs/locals.log', 'w')
+		d2 = str(datetime.now())
+		local_export.write(d2 + '\n' + str(locals()))
+		global_export = open(path + 'logs/globals.log', 'w')
+		local_export.write(d2 + '\n' + str(globals()))
 		t.do_run = False
 		td = open('tempF', 'w')
 		td.close()
@@ -173,10 +191,16 @@ def log(level, message):
 						logFile.write(LMsg)
 						logFile.close()
 	except Exception as logErr:
+		global dotenv_loaded
 		exc_type, exc_obj, exc_tb = sys.exc_info()
 		filename = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
 		lineno = exc_tb.tb_lineno
-		print('The logger errored! Die time! Error: '+str(logErr)+' On line '+str(lineno))
+		path  = os.path.dirname(os.path.realpath(__file__))
+		if dotenv_loaded == True:
+			print('The logger failed! Exiting. Error: '+str(logErr)+' On line '+str(lineno)+'. Current working directory is '+path+' and the set path var is set to '+path+', and was loaded by the dotenv file.')
+		else:
+			print('The logger failed! Exiting. Error: ' + str(logErr) + ' On line ' + str(
+				lineno) + '. Current working directory is ' + path + ' and the set path var is set to ' + path + ', and was loaded by the global system vars.')
 		die()
 
 def login(username, password):
@@ -269,7 +293,7 @@ def checkThreads():
 					log('ERROR', ' - discDaemon died! Restarting. Error: '+discErrDat)
 	
 					log('INFO', ' - discDaemon starting subproc...')
-	
+
 					discFile = open('temp.py', 'w')
 					discFile.write(disc)
 					discFile.close()
@@ -547,7 +571,7 @@ log("INFO", " - Start finished with no fatal errors. Starting up flask server")
 if __name__ == "__main__":
 	try:
 		try:
-			app.run(debug=True, use_reloader=False, host='0.0.0.0')
+			app.run(host='0.0.0.0')
 		except KeyboardInterrupt:
 			die()
 	except Exception as flask_error:
