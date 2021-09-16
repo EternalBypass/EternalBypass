@@ -1,3 +1,4 @@
+### This fork will only be caught up to significant commits, and no experimental. It is (will be)stable.
 # Eternal Bypass
 An website that is made to try and combat annoying web filters. The website will rotate the IP and give the tool an new domain evrey time it is reported to be blocked. It will also support adding your own tools to the website, and it will keep your tool unblocked. All services are free. No website is online yet, but to keep updated join the discord server here: https://discord.gg/ucg3PW7dJR
 
