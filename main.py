@@ -360,11 +360,20 @@ import time
 from threading import Thread
 import os
 import datetime
+from datetime import datetime
+dotenv_loaded=False
 allOutPlain=False
+logFileOutPlain=False
+path='./'
 def die():
-	tempErr = open(path + 'logs/tempScript.log', 'w')
-	tempErr.write('Manual initiated kill.')
-	tempErr.close()
+	try:
+		tempErr = open(path + 'logs/tempScript.log', 'w')
+		tempErr.write('Manual initiated kill.')
+		tempErr.close()
+	except Exception:
+		tempErr = open('./logs/tempScript.log', 'w')
+		tempErr.write('Manual initiated kill.')
+		tempErr.close()
 	print('Found tempF flag, killing self. pid will be reserved for less than 3 seconds.')
 
 	os.system('kill -9 ' + str(os.getpid()))
@@ -386,15 +395,12 @@ try: #If you have problems trying to load the dotenv, use the printed info to fi
 except Exception as err:
 	print('ERROR - Unable to load dotenv. Err:', str(err) + ' . Current working directory is ' + str(os.getcwd()))
 	try:
-		path = os.environ.get('FULL_PATH')
+		path = './'
 		TOKEN = os.environ.get('DISCORD_TOKEN')
 		print('INFO - Path is '+path)
-		if path[-1] != '/':
-			path = str(path + '/')
-			print('INFO - Path has been corrected to '+path)
-	except Exception:
-		print('ERROR - Unable to load dotenv, or load full path of necessary files from system vars. Defaulting to current directory.')
-		path = './'
+	except Exception as err:
+		print('CATASTROPHE - Unable to load token from dotenv or enviroment!')
+		die()
 		
 def log(level, message): #This function only exists because of the fact that this script will only get more and more complicated.
 	global path
@@ -412,90 +418,90 @@ def log(level, message): #This function only exists because of the fact that thi
 			lineno=sys.exc_info()[-1].tb_lineno
 		if level == 'error' or level == 'ERROR' or level == 'Error':
 
-			LMsg = d1 + ' - ' + filename + ':' + '\033[31;1m' + level + '\033[0m' + '\033[0;1m' + message + '\033[0m' + ' on line ' + str(lineno) + '\n'
+			LMsg = d1 + ' - ' + filename + ':' + '\\033[31;1m' + level + '\\033[0m' + '\\033[0;1m' + message + '\\033[0m' + ' on line ' + str(lineno) + '\\n'
 			if allOutPlain == False:
 					print(LMsg, end="")
 
 			else:
-					LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\n'
+					LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
 					print(LMsg, end="")
 			if logFileOutPlain == True:
-				LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\n'
+				LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
 
 			logFile.write(LMsg)
 			logFile.close()
 		else:
 			if level == 'warning' or level == 'WARNING' or level == 'Warning' or level == 'warn' or level == 'WARN' or level == 'warn':
-				LMsg = d1 + ' - ' + filename + ':' + '\033[33;1m' + level + '\033[0m' + '\033[0;1m' + message + '\033[0m\n'
+				LMsg = d1 + ' - ' + filename + ':' + '\\033[33;1m' + level + '\\033[0m' + '\\033[0;1m' + message + '\\033[0m\\n'
 				if allOutPlain == False:
 					print(LMsg, end="")
 
 				else:
-					LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\n'
+					LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
 					print(LMsg, end="")
 
 				if logFileOutPlain == True:
-					LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\n'
+					LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
 				logFile.write(LMsg)
 				logFile.close()
 			else:
 				if level == 'info' or level == 'INFO' or level == 'Info':
 					if 'New session start' in message:
-						LMsg = '\n\n\n'+d1 + ' - ' + filename + ':' + '\033[36;1m' + level + '\033[0m' + '\033[0;1m' + message + '\033[0m\n'
+						LMsg = '\\n\\n\\n'+d1 + ' - ' + filename + ':' + '\\033[36;1m' + level + '\\033[0m' + '\\033[0;1m' + message + '\\033[0m\\n'
 					else:
-						LMsg = d1 + ' - ' + filename + ':' + '\033[36;1m' + level + '\033[0m' + '\033[0;1m' + message + '\033[0m\n'
+						LMsg = d1 + ' - ' + filename + ':' + '\\033[36;1m' + level + '\\033[0m' + '\\033[0;1m' + message + '\\033[0m\\n'
 					if allOutPlain == False:
 						print(LMsg, end="")
 
 					else:
 						if 'New session start' in message:
-							LMsg = '\n\n\n'+d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\n'
+							LMsg = '\\n\\n\\n'+d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
 							print(LMsg, end="")
 						else:
-							LMsg = '\n\n\n' + d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\n'
+							LMsg = '\\n\\n\\n' + d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
 					if logFileOutPlain == True:
 						if 'New session start' in message:
-							LMsg = '\n\n\n'+d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\n'
+							LMsg = '\\n\\n\\n'+d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
 						else:
-							LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\n'
+							LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
 					logFile.write(LMsg)
 					logFile.close()
 				else:
 					if level == 'critical' or level == 'CRITICAL' or level == 'Critical' or level == 'catastrophe' or level == 'Catastrophe' or level == 'CATASTROPHE':
 						if allOutPlain == False:
-								print('\033[31;1m==========CATASTROPHE OCCURED===========\033[0m')
+								print('\\033[31;1m==========CATASTROPHE OCCURED===========\\033[0m')
 						else:
 								print('==========CATASTROPHE OCCURED===========')
 						if logFileOutPlain != True:
-							logFile.write('\033[31;1m==========CATASTROPHE OCCURED===========\033[0m\n')
+							logFile.write('\\033[31;1m==========CATASTROPHE OCCURED===========\\033[0m\\n')
 						else:
 							logFile.write('==========CATASTROPHE OCCURED===========')
-						LMsg = d1 + ' - ' + filename + ':' + '\033[31;1m' + level + '\033[0m' + '\033[0;1m' + message + '\033[0m' + ' on line ' + str(lineno) + '\n'
+						LMsg = d1 + ' - ' + filename + ':' + '\\033[31;1m' + level + '\\033[0m' + '\\033[0;1m' + message + '\\033[0m' + ' on line ' + str(lineno) + '\\n'
 						if allOutPlain == False:
 								print(LMsg, end="")
-								print('\033[31;1m========================================\033[0m')
+								print('\\033[31;1m========================================\\033[0m')
 								print('')
 						else:
-								LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\n'
+								LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
 								print(LMsg, end="")
 								print('========================================')
 						if logFileOutPlain == True:
-							LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\n'
+							LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
 						if logFileOutPlain != True:
 							logFile.write(LMsg)
-							logFile.write('\033[31;1m========================================\033[0m\n')
+							logFile.write('\\033[31;1m========================================\\033[0m\\n')
 						else:
 							logFile.write(LMsg)
-							logFile.write('========================================\n')
+							logFile.write('========================================\\n')
 						logFile.write(LMsg)
 						logFile.close()
 						if logTestBool != True:
 							die()
 					else:
-						LMsg = d1+' - ' + filename +':'+level+' -   '+message+'\n'
+						LMsg = d1+' - ' + filename +':'+level+' -   '+message+'\\n'
 						print(LMsg, end="")
 						if logFileOutPlain == True:
-							LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\n'
+							LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
 						logFile.write(LMsg)
 						logFile.close()
 	except Exception as logErr:
@@ -558,7 +564,7 @@ try:
 		discMessages=open('./data/discord/channelMessagesProxy', 'w')
 		for i, message in enumerate(messages):
 			messageCon = message.content
-			discMessages.write(str(message.author)+': '+messageCon+'\n')
+			discMessages.write(str(message.author)+': '+messageCon+'\\n')
 			
 		channel = client.get_channel(864258119881064462)
 		messages = await channel.history().flatten()
@@ -566,7 +572,7 @@ try:
 		discMessages=open('./data/discord/channelMessagesGeneral', 'w')
 		for i, message in enumerate(messages):
 			messageCon = message.content
-			discMessages.write(str(message.author)+': '+messageCon+'\n')
+			discMessages.write(str(message.author)+': '+messageCon+'\\n')
 			
 		channel = client.get_channel(866898966720806983)
 		messages = await channel.history().flatten()
@@ -574,7 +580,7 @@ try:
 		discMessages=open('./data/discord/channelMessagesTools', 'w')
 		for i, message in enumerate(messages):
 			messageCon = message.content
-			discMessages.write(str(message.author)+': '+messageCon+'\n')
+			discMessages.write(str(message.author)+': '+messageCon+'\\n')
 			
 	# log("INFO", "discordMirror starting loops.")
 	currentPid = os.getpid()
@@ -594,7 +600,7 @@ except Exception as discErr:
 	except Exception as linenoErr:
 		# print('LOGGER: Using alternate method for lineno. Err: '+str(linenoErr))
 		lineno = sys.exc_info()[-1].tb_lineno
-	log('CATASTROPHE' - 'An error occured. Error: ' + str(discErr) + ' in file ' + str(filename) + ' on line ' + str(lineno))
+	log('CATASTROPHE', 'An error occured. Error: ' + str(discErr) + ' in file ' + str(filename) + ' on line ' + str(lineno))
 	exit()
 '''
 
