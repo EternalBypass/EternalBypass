@@ -81,3 +81,55 @@
 [31;1m========================================[0m
 2021-09-15 22:37:14.491073 - main.py:[31;1mCATASTROPHE[0m[0;1mAn fatal error occured in checkThreads. checkThreads must stay alive!!! Error: an integer is required (got type str)[0m on line 289
 2021-09-15 22:37:14.491671 - main.py:[31;1mERROR[0m[0;1m - Failed to die gracefully. Reason: [Errno 13] Permission denied: '/var/www/EternalBypass/EternalBypass/logs/locals.log'[0m on line 79
+2021-09-16 10:24:32.192595 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1mDoes logging work in this scope?[0m
+2021-09-16 10:24:32.192702 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - New session start at 2021-09-16 10:24:32.192697
+
+
+[0m
+2021-09-16 10:24:32.192745 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - Start executed.[0m
+2021-09-16 10:24:32.199781 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - downDaemon starting thread...[0m
+2021-09-16 10:24:32.200158 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - downDaemon started thread.[0m
+2021-09-16 10:24:32.200227 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - discordMirror starting subproc...[0m
+2021-09-16 10:24:32.202121 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m- discordMirror subproc started. PID: 107171[0m
+2021-09-16 10:24:32.202285 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - checkThreads starting thread...[0m
+2021-09-16 10:24:32.202575 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m- checkThreads thread started.[0m
+2021-09-16 10:24:32.202752 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - Start finished with no fatal errors. Starting up flask server[0m
+2021-09-16 10:36:35.526068 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1mDoes logging work in this scope?[0m
+2021-09-16 10:36:35.526213 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - New session start at 2021-09-16 10:36:35.526206
+
+
+[0m
+2021-09-16 10:36:35.526277 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - Start executed.[0m
+2021-09-16 10:36:35.532243 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - downDaemon starting thread...[0m
+2021-09-16 10:36:35.532571 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - downDaemon started thread.[0m
+2021-09-16 10:36:35.532643 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - discordMirror starting subproc...[0m
+2021-09-16 10:36:35.534437 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m- discordMirror subproc started. PID: 107470[0m
+2021-09-16 10:36:35.534606 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - checkThreads starting thread...[0m
+2021-09-16 10:36:35.534912 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m- checkThreads thread started.[0m
+2021-09-16 10:36:35.535117 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - Start finished with no fatal errors. Starting up flask server[0m
+2021-09-16 10:40:24.752590 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1mDoes logging work in this scope?[0m
+2021-09-16 10:40:24.752769 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - New session start at 2021-09-16 10:40:24.752761
+
+
+[0m
+2021-09-16 10:40:24.752838 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - Start executed.[0m
+2021-09-16 10:40:24.759798 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - downDaemon starting thread...[0m
+2021-09-16 10:40:24.760489 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - downDaemon started thread.[0m
+2021-09-16 10:40:24.760595 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - discordMirror starting subproc...[0m
+2021-09-16 10:40:24.922330 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m- discordMirror subproc started. PID: 107893[0m
+2021-09-16 10:40:24.923055 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - checkThreads starting thread...[0m
+2021-09-16 10:40:24.924339 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m- checkThreads thread started.[0m
+2021-09-16 10:40:24.925137 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - Start finished with no fatal errors. Starting up flask server[0m
+2021-09-16 10:49:34.095437 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1mDoes logging work in this scope?[0m
+2021-09-16 10:49:34.095542 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - New session start at 2021-09-16 10:49:34.095538
+
+
+[0m
+2021-09-16 10:49:34.095585 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - Start executed.[0m
+2021-09-16 10:49:34.102776 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - downDaemon starting thread...[0m
+2021-09-16 10:49:34.103074 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - downDaemon started thread.[0m
+2021-09-16 10:49:34.103139 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - discordMirror starting subproc...[0m
+2021-09-16 10:49:34.104964 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m- discordMirror subproc started. PID: 108254[0m
+2021-09-16 10:49:34.105129 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - checkThreads starting thread...[0m
+2021-09-16 10:49:34.105453 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m- checkThreads thread started.[0m
+2021-09-16 10:49:34.105696 - /home/jamesh/PycharmProjects/EternalBypass/main.py:[36;1mINFO[0m[0;1m - Start finished with no fatal errors. Starting up flask server[0m
