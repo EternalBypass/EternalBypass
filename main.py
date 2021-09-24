@@ -14,7 +14,7 @@ Copyright (C) 2021 James Hoffman
 
 	You should have received a copy of the GNU General Public License
 	along with this program.  If not, please check the COPYING file
-	 or see <https://www.gnu.org/licenses/>.
+	or see <https://www.gnu.org/licenses/>.
 
 You can contact me at jamesgene@icloud.com.
 '''
@@ -34,10 +34,11 @@ try:
 except Exception: #TODO Fix pyautogui to work with X, or preferably better solution.
 	pass
 import subprocess
-try:
-	dot = open('./static/eternalBypass.env', 'r')
-	dotr = dot.read()
+try: #If you have problems trying to load the dotenv, use the printed info to find the cwd and place the necessary files in there.
+	print(str(os.system('pwd')))
 	from dotenv import load_dotenv
+	dot = open('./static/eternalBypass.env')
+	dotr = dot.read()
 	load_dotenv('./static/eternalBypass.env')
 	path=str(os.getenv("FULL_PATH"))
 	print('INFO - Path is ' + path)
@@ -46,7 +47,7 @@ try:
 		print('INFO - Path has been corrected to ' + path)
 	dotenv_loaded = True
 except Exception as err:
-	print('ERROR - Unable to load dotenv. Err:', err)
+	print('ERROR - Unable to load dotenv. Err:', str(err) + ' . Current working directory is ' + str(os.getcwd()))
 	try:
 		path = os.environ.get('FULL_PATH')
 		print('INFO - Path is '+path)
@@ -85,10 +86,13 @@ def die():
 		td = open('tempF', 'w')
 		td.close()
 		time.sleep(3)
-		os.system('rm -rf temp.py '+path+'logs/tempScript.log tempF')
+		os.system('rm -rf '+path+'temp.py '+path+'logs/tempScript.log tempF')
 		tc.do_run = False
 	except Exception as die_err:
-		log("ERROR", ' - Failed to die gracefully. Reason: '+str(die_err))
+		try:
+			log("ERROR", ' - Failed to die gracefully. Reason: '+str(die_err))
+		except Exception:
+			print("ERROR", " - Failed to die gracefully, and could not log. Reason: "+str(die_err))
 		exit()
 	log("INFO", " - Died gracefully. For all time. Always.[all threads reset/killed] ("+str(datetime.now())+") \n")
 	exit()
@@ -102,10 +106,7 @@ def log(level, message):
 		d1 = str(datetime.now())
 		logFile = open(path+'logs/main.log', 'a')
 		exc_type, exc_obj, exc_tb = sys.exc_info()
-		try:
-			filename = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
-		except Exception:
-			filename = __file__
+		filename = __file__
 		try:
 			lineno = exc_tb.tb_lineno
 		except Exception as linenoErr:
@@ -141,15 +142,24 @@ def log(level, message):
 				logFile.close()
 			else:
 				if level == 'info' or level == 'INFO' or level == 'Info':
-					LMsg = d1 + ' - ' + filename + ':' + '\033[36;1m' + level + '\033[0m' + '\033[0;1m' + message + '\033[0m\n'
+					if 'New session start' in message:
+						LMsg = '\n\n\n'+d1 + ' - ' + filename + ':' + '\033[36;1m' + level + '\033[0m' + '\033[0;1m' + message + '\033[0m\n'
+					else:
+						LMsg = d1 + ' - ' + filename + ':' + '\033[36;1m' + level + '\033[0m' + '\033[0;1m' + message + '\033[0m\n'
 					if allOutPlain == False:
 						print(LMsg, end="")
 
 					else:
-						LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\n'
-						print(LMsg, end="")
+						if 'New session start' in message:
+							LMsg = '\n\n\n'+d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\n'
+							print(LMsg, end="")
+						else:
+							LMsg = '\n\n\n' + d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\n'
 					if logFileOutPlain == True:
-						LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\n'
+						if 'New session start' in message:
+							LMsg = '\n\n\n'+d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\n'
+						else:
+							LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\n'
 					logFile.write(LMsg)
 					logFile.close()
 				else:
@@ -294,19 +304,19 @@ def checkThreads():
 	
 					log('INFO', ' - discDaemon starting subproc...')
 
-					discFile = open('temp.py', 'w')
+					discFile = open(path+'temp.py', 'w')
 					discFile.write(disc)
 					discFile.close()
-					discProc = subprocess.Popen(['python3', 'temp.py'])
+					discProc = subprocess.Popen(['python3', path+'temp.py'])
 	
 					time.sleep(3)  # Wait at least 3 seconds to make sure its up. We have no way to talk to it, so...
 					discPid = discProc.pid
-					log('INFO', '- discordMirror subproc started. PID: ' + str(discPid))
+					log('INFO', ' - discordMirror subproc started. PID: ' + str(discPid))
 
 
 		log('INFO', 'Flag set to die, dying.')
 	except Exception as checkThreadsErr:
-		log('CATASTROPHE', 'An fatal error occured in checkThreads. checkThreads must stay alive!!! Error: '+str(checkThreadsErr))
+		log('CATASTROPHE', ' - An fatal error occured in checkThreads. checkThreads must stay alive!!! Error: '+str(checkThreadsErr))
 
 def downDetector_daemon():
 	global t
@@ -322,23 +332,198 @@ def downDetector_daemon():
 				first = False
 	except Exception as downDaemonErr:
 		log('ERROR', ' - downDetector_daemon died with error: '+str(downDaemonErr)+' Will be restarted within 10 seconds.')
+#Keep it all in one script. Ugly, but whatever.
+disc = ''' 
+"""
+EternalBypass, an network of methods to bypass web filtering.
+Copyright (C) 2021 James Hoffman
 
-disc = ''' #Keep it all in one script. Ugly, but whatever.
- #Keep it all in one script. Ugly, but whatever.
+	This file is part of EternalBypass.
+	EternalBypass is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, please check the COPYING file
+	or see <https://www.gnu.org/licenses/>.
+
+You can contact me at jamesgene@icloud.com.
+"""
 import sys
 import time
 from threading import Thread
 import os
+import datetime
+from datetime import datetime
+dotenv_loaded=False
+allOutPlain=False
+logFileOutPlain=False
+path='./'
+def die():
+	try:
+		tempErr = open(path + 'logs/tempScript.log', 'w')
+		tempErr.write('Manual initiated kill.')
+		tempErr.close()
+	except Exception:
+		tempErr = open('./logs/tempScript.log', 'w')
+		tempErr.write('Manual initiated kill.')
+		tempErr.close()
+	print('Found tempF flag, killing self. pid will be reserved for less than 3 seconds.')
+
+	os.system('kill -9 ' + str(os.getpid()))
+	exit()
 from dotenv import load_dotenv
-load_dotenv('./static/eternalBypass.env')
-TOKEN=os.getenv("DISCORD_TOKEN")
-path=str(os.getenv("FULL_PATH"))
+try: #If you have problems trying to load the dotenv, use the printed info to find the cwd and place the necessary files in there.
+	print(str(os.system('pwd')))
+	from dotenv import load_dotenv
+	dot = open('./static/eternalBypass.env')
+	dotr = dot.read()
+	load_dotenv('./static/eternalBypass.env')
+	path=str(os.getenv("FULL_PATH"))
+	TOKEN=os.getenv("DISCORD_TOKEN")
+	print('INFO - Path is ' + path)
+	if path[-1] != '/':
+		path = str(path + '/')
+		print('INFO - Path has been corrected to ' + path)
+	dotenv_loaded = True
+except Exception as err:
+	print('ERROR - Unable to load dotenv. Err:', str(err) + ' . Current working directory is ' + str(os.getcwd()))
+	try:
+		path = './'
+		TOKEN = os.environ.get('DISCORD_TOKEN')
+		print('INFO - Path is '+path)
+	except Exception as err:
+		print('CATASTROPHE - Unable to load token from dotenv or enviroment!')
+		die()
+		
+def log(level, message): #This function only exists because of the fact that this script will only get more and more complicated.
+	global path
+	try:
+		global logTestBool
+		global logFileOutPlain
+		d1 = str(datetime.now())
+		logFile = open(path+'logs/tempScript.log', 'a')
+		exc_type, exc_obj, exc_tb = sys.exc_info()
+		filename = __file__
+		try:
+			lineno = exc_tb.tb_lineno
+		except Exception as linenoErr:
+			#print('LOGGER: Using alternate method for lineno. Err: '+str(linenoErr))
+			lineno=sys.exc_info()[-1].tb_lineno
+		if level == 'error' or level == 'ERROR' or level == 'Error':
+
+			LMsg = d1 + ' - ' + filename + ':' + '\\033[31;1m' + level + '\\033[0m' + '\\033[0;1m' + message + '\\033[0m' + ' on line ' + str(lineno) + '\\n'
+			if allOutPlain == False:
+					print(LMsg, end="")
+
+			else:
+					LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
+					print(LMsg, end="")
+			if logFileOutPlain == True:
+				LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
+
+			logFile.write(LMsg)
+			logFile.close()
+		else:
+			if level == 'warning' or level == 'WARNING' or level == 'Warning' or level == 'warn' or level == 'WARN' or level == 'warn':
+				LMsg = d1 + ' - ' + filename + ':' + '\\033[33;1m' + level + '\\033[0m' + '\\033[0;1m' + message + '\\033[0m\\n'
+				if allOutPlain == False:
+					print(LMsg, end="")
+
+				else:
+					LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
+					print(LMsg, end="")
+
+				if logFileOutPlain == True:
+					LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
+				logFile.write(LMsg)
+				logFile.close()
+			else:
+				if level == 'info' or level == 'INFO' or level == 'Info':
+					if 'New session start' in message:
+						LMsg = '\\n\\n\\n'+d1 + ' - ' + filename + ':' + '\\033[36;1m' + level + '\\033[0m' + '\\033[0;1m' + message + '\\033[0m\\n'
+					else:
+						LMsg = d1 + ' - ' + filename + ':' + '\\033[36;1m' + level + '\\033[0m' + '\\033[0;1m' + message + '\\033[0m\\n'
+					if allOutPlain == False:
+						print(LMsg, end="")
+
+					else:
+						if 'New session start' in message:
+							LMsg = '\\n\\n\\n'+d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
+							print(LMsg, end="")
+						else:
+							LMsg = '\\n\\n\\n' + d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
+					if logFileOutPlain == True:
+						if 'New session start' in message:
+							LMsg = '\\n\\n\\n'+d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
+						else:
+							LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
+					logFile.write(LMsg)
+					logFile.close()
+				else:
+					if level == 'critical' or level == 'CRITICAL' or level == 'Critical' or level == 'catastrophe' or level == 'Catastrophe' or level == 'CATASTROPHE':
+						if allOutPlain == False:
+								print('\\033[31;1m==========CATASTROPHE OCCURED===========\\033[0m')
+						else:
+								print('==========CATASTROPHE OCCURED===========')
+						if logFileOutPlain != True:
+							logFile.write('\\033[31;1m==========CATASTROPHE OCCURED===========\\033[0m\\n')
+						else:
+							logFile.write('==========CATASTROPHE OCCURED===========')
+						LMsg = d1 + ' - ' + filename + ':' + '\\033[31;1m' + level + '\\033[0m' + '\\033[0;1m' + message + '\\033[0m' + ' on line ' + str(lineno) + '\\n'
+						if allOutPlain == False:
+								print(LMsg, end="")
+								print('\\033[31;1m========================================\\033[0m')
+								print('')
+						else:
+								LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
+								print(LMsg, end="")
+								print('========================================')
+						if logFileOutPlain == True:
+							LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
+						if logFileOutPlain != True:
+							logFile.write(LMsg)
+							logFile.write('\\033[31;1m========================================\\033[0m\\n')
+						else:
+							logFile.write(LMsg)
+							logFile.write('========================================\\n')
+						logFile.write(LMsg)
+						logFile.close()
+						if logTestBool != True:
+							die()
+					else:
+						LMsg = d1+' - ' + filename +':'+level+' -   '+message+'\\n'
+						print(LMsg, end="")
+						if logFileOutPlain == True:
+							LMsg = d1 + ' - ' + filename + ':' + level + message + ' on line ' + str(lineno) + '\\n'
+						logFile.write(LMsg)
+						logFile.close()
+	except Exception as logErr:
+		global dotenv_loaded
+		exc_type, exc_obj, exc_tb = sys.exc_info()
+		filename = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
+		lineno = exc_tb.tb_lineno
+		path  = os.path.dirname(os.path.realpath(__file__))
+		if dotenv_loaded == True:
+			print('The logger failed! Exiting. Error: '+str(logErr)+' On line '+str(lineno)+'. Current working directory is '+path+' and the set path var is set to '+path+', and was loaded by the dotenv file.')
+		else:
+			print('The logger failed! Exiting. Error: ' + str(logErr) + ' On line ' + str(
+				lineno) + '. Current working directory is ' + path + ' and the set path var is set to ' + path + ', and was loaded by the global system vars.')
+		die()
+		
 try:
+	log('INFO', ' - New session start at '+str(datetime.now()))
 	from discord.ext import commands
 
 	client = commands.Bot(command_prefix='$')
 	import discord
-
+	log('INFO', 'Cleaning flag')
 	#client = discord.Client()
 	os.system('rm -rf tempF')
 
@@ -351,11 +536,10 @@ try:
 	def killCheck(pid):
 		while True:
 			if os.path.exists('tempF') == True:
+				log('INFO', ' - Found tempF flag, killing self. PID will be reserved for less than 3 seconds.')
 				tempErr = open(path+'logs/tempScript.log', 'w')
 				tempErr.write('Manual initiated kill.')
 				tempErr.close()
-				print('Found tempF flag, killing self. pid will be reserved for less than 3 seconds.')
-				
 				os.system('kill -9 ' + str(pid))
 				exit()
 
@@ -416,14 +600,8 @@ except Exception as discErr:
 	except Exception as linenoErr:
 		# print('LOGGER: Using alternate method for lineno. Err: '+str(linenoErr))
 		lineno = sys.exc_info()[-1].tb_lineno
-	tempErr = open(path+'logs/tempScript.log', 'w')
-	tempErr.write(str(discErr) + ' in file ' + str(filename) + ' on line ' + str(lineno))
-	tempErr.close()
-	print(str(discErr) + ' in file ' + str(filename) + ' on line ' + str(lineno))
+	log('CATASTROPHE', 'An error occured. Error: ' + str(discErr) + ' in file ' + str(filename) + ' on line ' + str(lineno))
 	exit()
-
-
-
 '''
 
 def logTest():
@@ -443,8 +621,7 @@ def start():
 	global noSubprocess
 	global td
 	try: #Exception handling is in this scope so you can get an actual line number, instead of the number of the function executing.
-		log('INFO', 'Does logging work in this scope?')
-		log('INFO', ' - New session start at '+str(datetime.now())+'\n'+'\n'+'\n')
+		log('INFO', ' - New session start at '+str(datetime.now()))
 		log('INFO', ' - Start executed.')
 		try:
 			downDetector()
@@ -470,14 +647,14 @@ def start():
 		try:
 			if noSubprocess == False:
 				log('INFO', ' - discordMirror starting subproc...')
-				discFile = open('temp.py', 'w')
+				discFile = open(path+'temp.py', 'w')
 				discFile.write(disc)
 				discFile.close()
-				discProc = subprocess.Popen(['python3', 'temp.py'])
+				discProc = subprocess.Popen(['python3', path+'temp.py'])
 
 			#time.sleep(3)  # Wait at least 3 seconds to make sure its up. We have no way to talk to it, so...
 				discPid = discProc.pid
-				log('INFO', '- discordMirror subproc started. PID: '+str(discPid))
+				log('INFO', ' - discordMirror subproc started. PID: '+str(discPid))
 			else:
 				pass
 		except Exception as downDiscError:
@@ -489,7 +666,7 @@ def start():
 			tc = Thread(target=checkThreads, name='checkThreadDaemon')
 			tc.daemon = True
 			tc.start()
-			log('INFO', '- checkThreads thread started.')
+			log('INFO', ' - checkThreads thread started.')
 		except Exception as checkThreadsError:
 			log('ERROR', ' - checkThreads thread start failed with error: ' + str(checkThreads))
 			checkThreadsError = ''
