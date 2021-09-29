@@ -7,7 +7,9 @@ Donations are accepted, and need to meet a yearly goal in order to stay alive. T
 
 As of right now, 30/60$ has been funded. It needs to meet the goal before the site can go up, but the site is still in development, and does not need to meet this goal for a while. This 60$ goal allows for ~20 custom tools anyone can put onto the network for free. Evrey additional 25$ after this goal allows for 25 new custom tools, supposedly unlimited. This is due to the pricing of noip. If you want to support me, there is a tier on patreon for that. But please only do this if the project is already funded for that year.
 
-If you would like to donate, do so here:https://www.patreon.com/eternalbypass?fan_landing=true \
+If you would like to donate, do so here:https://www.patreon.com/eternalbypass?fan_landing=true or at the Ethereum address 0x72Dcf14DfDC6bED07EA2BA142bfe1115af7E77d5 \
+ Bitcoin address 1gkRbAXVAuFeTau8JoyyMTbtEDjDGpzAJ \
+ or Nano address nano_3c7nhoaqze5448ta1jr59fn6xrumjr4ukn69zycdfa94t4ctz8dqjjur74i6 \
 ![50%](https://progress-bar.dev/50) funded \
 Current domain count: 3. 2 in use. None available for usage. (free domains) \
 Donators: \
