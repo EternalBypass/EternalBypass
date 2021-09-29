@@ -19,3 +19,4 @@ Donators: \
 <sub>The 60$ is needed in order to fund the noip.com services Enhanced Dynamic DNS, and Plus Managed DNS. Evrey additional 25$ buys 25 more domains. Once you remove a domain you can get another in replacement.
 ## Upstream merges:
  Sep 24 - Major change removed massive cache, significantly reducing size.
+ Sep 29 - Readme update adds Ethereum, Bitcoin, and Nano address.
